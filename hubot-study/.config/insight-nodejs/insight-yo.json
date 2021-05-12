@@ -1,0 +1,10 @@
+{
+	"clientId": 1361521679915,
+	"optOut": false,
+	"queue": {
+		"1620361828544 db9fb60a-ce8e-4dfa-8ae9-670a3e6eea0d": {
+			"path": "/hubot-yarn",
+			"type": "pageview"
+		}
+	}
+}
