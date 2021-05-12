@@ -11,12 +11,32 @@ function add(task){
 }
 
 /**
+ * taskと完了済みかどうかをオブジェクトで渡すと、ステータスを返す
+ * @param {object} taskAndIsDonePair 
+ * @returns {boolean} 完了・未完了のステータス
+ */
+function isDone(taskAndIsDonePair) {
+    return taskAndIsDonePair.state;
+}
+
+/**
+ * タスクとステータスを渡すと、完了していないかどうかを返す
+ * @param {object} taskAndIsDonePair 
+ * @returns {boolean} 完了・未完了ステータス
+ */
+function isNotDone(taskAndIsDonePair) {
+    return !isDone(taskAndIsDonePair);
+}
+
+/**
  * TODOリストから未完了リストの一覧を取得
  * @returns {array}
  */
 function list(){
     return tasks
-        .filter(task => !task.state)
+        // .filter(task => !task.state) 一回目のリファクタリング
+        // .filter(task => !isDone(task))　2回目のリファクタリング
+        .filter(isNotDone)
         .map(t => t.name);
 }
 
@@ -37,7 +57,8 @@ function done(task){
  */
 function donelist() {
     return tasks
-        .filter(task => task.state)
+        // .filter(task => task.state) フィルタリング
+        .filter(isDone)
         .map(t => t.name);
 }
 
