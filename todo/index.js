@@ -6,8 +6,8 @@ const tasks = [];
  * 新規のタスクをTODOリストに追加
  * @param {String} task 
  */
-function add(task){
-    tasks.push({name: task, state: false});
+function add(task) {
+    tasks.push({ name: task, state: false });
 }
 
 /**
@@ -32,7 +32,7 @@ function isNotDone(taskAndIsDonePair) {
  * TODOリストから未完了リストの一覧を取得
  * @returns {array}
  */
-function list(){
+function list() {
     return tasks
         // .filter(task => !task.state) 一回目のリファクタリング
         // .filter(task => !isDone(task))　2回目のリファクタリング
@@ -44,15 +44,15 @@ function list(){
  * TODOを完了済み(true)にする
  * @param {String} task 
  */
-function done(task){
+function done(task) {
     const indexFound = tasks.findIndex(t => t.name === task);
-    if (indexFound !== -1 ){
+    if (indexFound !== -1) {
         tasks[indexFound].state = true;
     }
 }
 
 /**
- * 完了済みタスク一覧を配列で受け取る
+ * 完了済みisDone=trueのタスク一覧を配列で受け取る
  * @returns {array}
  */
 function donelist() {
