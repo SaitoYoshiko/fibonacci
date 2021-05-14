@@ -3,9 +3,9 @@
 //  Commands:
 //     bot名  add      - TODO を作成
 //     bot名  done     - TODO を完了済みにする
-//     bot名  add      - TODO を消す
-//     bot名  add      - TODO の一覧を取得
-//     bot名  add      - TODO 完了済のTODO一覧を取得
+//     bot名  del      - TODO を消す
+//     bot名  list     - TODO の一覧を取得
+//     bot名  donelist - TODO 完了済のTODO一覧を取得
 
 'use strict';
 const todo = require('todo');
@@ -24,8 +24,14 @@ module.exports = robot => {
     });
     robot.respond(/del (.+)/i, msg => {
         const task = msg.match[1].trim();
-        todo.dell(task);
+        todo.del(task);
         msg.send('削除しました： ' + task);
+    });
+    robot.respond(/list/i, msg => {
+        msg.send(todo.list().join('\n'));
+    });
+    robot.respond(/donelist/i, msg => {
+        msg.send(todo.donelist().join('\n'));
     });
 };
 
