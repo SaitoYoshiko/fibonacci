@@ -7,3 +7,10 @@ code-insiders .
 bin/hubot
 bin/hubot
 exit
+bin/hubot
+hubot-todo add 鉛筆を買う
+exit
+bin/hubot
+bin/hubot
+bin/hubot
+exit

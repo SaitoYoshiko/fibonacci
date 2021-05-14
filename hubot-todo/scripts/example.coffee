@@ -1,14 +1,6 @@
 # Description:
-#   TODO 管理ができるボットです。
 #   Example scripts for you to examine and try out.
 # 
-# Commands: 
-#   bot名  add        - TODO を作成
-#   bot名  done       - TODO のTaskを完了にする
-#   bot名  del        - TODO を消す
-#   bot名  list       - TODO の一覧を表示する
-#   bot名  donelist   - 完了した TODO の一覧を表示する
-#
 # Notes:
 #   They are commented out by default, because most of them are pretty silly and
 #   wouldn't be useful and amusing enough for day to day huboting.
@@ -16,9 +8,7 @@
 #
 #   These are from the scripting documentation: https://github.com/github/hubot/blob/master/docs/scripting.md
 
-'use strict';
-const todo = require('todo');
-module.exports = (robot) => {};
+module.exports = (robot) ->
 
   # robot.hear /badger/i, (res) ->
   #   res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
