@@ -8,6 +8,7 @@
 const http = require('http');
 const server = http.createServer((req, res) => {
   const now = Date.now();
+  res.setHeader('Set-Cookie', 'last_access=' + now + ';');
   const last_access_time = req.header.cookie ? parseInt(req.header.cookie.split('last_access=')[1]) : now;
   res.end(new Date(last_access_time).toString());
 });
